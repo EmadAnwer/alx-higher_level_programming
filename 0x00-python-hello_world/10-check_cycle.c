@@ -9,19 +9,19 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *current, *my_pointer;
-	
+
 	current = list;
 	while (current != NULL)
 	{
 		my_pointer = list;
 		while (my_pointer != current)
 		{
-			if(my_pointer == current->next)
+			if (my_pointer == current->next)
 				return (1);
 			my_pointer = my_pointer->next;
 		}
 		current = current->next;
 	}
-	
+
 	return (0);
 }
