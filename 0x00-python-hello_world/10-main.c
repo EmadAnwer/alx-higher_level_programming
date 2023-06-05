@@ -32,7 +32,7 @@ int main(void)
         printf("Linked list has a cycle\n");
 
     current = head;
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < 2; i++)
         current = current->next;
     temp = current->next;
     current->next = head;
