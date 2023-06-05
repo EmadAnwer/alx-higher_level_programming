@@ -9,6 +9,7 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *current, *my_pointer;
+
 	if(list == NULL)
 		return (-1);
 	current = list;
