@@ -12,7 +12,7 @@ int check_cycle(listint_t *list)
 
 	current = list;
 	my_pointer = list;
-	while (current != NULL && my_pointer->next && my_pointer)
+	while (current != NULL && my_pointer && my_pointer->next)
 	{
 		my_pointer = my_pointer->next;
 		current = current->next->next;
