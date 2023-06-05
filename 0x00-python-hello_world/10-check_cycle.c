@@ -27,7 +27,7 @@ int check_cycle(listint_t *list)
 				
 			pinters_list = pinters_list->next;
 		}
-		new_p = malloc(sizeof(listintp_t));
+		new_p = malloc(sizeof(listintp_t*));
 		if (pinters_list == NULL)
 		{
 			free_listintp(pinters_list);
