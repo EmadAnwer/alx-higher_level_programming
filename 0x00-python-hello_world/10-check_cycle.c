@@ -14,11 +14,10 @@ int check_cycle(listint_t *list)
 	my_pointer = list;
 	while (current != NULL && my_pointer && my_pointer->next)
 	{
-		my_pointer = my_pointer->next;
-		current = current->next->next;
+		current = current->next;
+		my_pointer = my_pointer->next->next;
 		if (my_pointer == current)
-				return (1);
-		
+			return (1);
 	}
 
 	return (0);
