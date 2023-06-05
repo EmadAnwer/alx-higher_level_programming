@@ -16,7 +16,7 @@ int check_cycle(listint_t *list)
 		my_pointer = list;
 		if (my_pointer == current->next)
 				return (1);
-		my_pointer = my_pointer->next;
+		my_pointer = my_pointer->next->next;
 		current = current->next;
 	}
 
