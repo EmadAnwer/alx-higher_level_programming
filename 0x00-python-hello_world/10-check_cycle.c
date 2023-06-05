@@ -2,60 +2,26 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
- * check_cycle - prints all elements of a listint_t list
- * @h: pointer to head of list
- * Return: number of nodes
+ * check_cycle -  checks if a singly linked list has a cycle
+ * @list: pointer to head of list
+ * Return: 0 if there is no cycle, 1 if there is a cycle
  */
 int check_cycle(listint_t *list)
 {
-	listintp_t *pinters_list = NULL, *current_p, *new_p;
-	listint_t *current;
-	
-	while (list != NULL)
+	listint_t *current, *my_pointer;
+
+	current = list;
+	while (current != NULL)
 	{
-		current = list;
-
-		while (pinters_list != NULL)
+		my_pointer = list;
+		while (my_pointer != current)
 		{
-			current_p = pinters_list;
-
-			if(current == current_p->p)
-			{
-				free_listintp(pinters_list);
+			if(my_pointer == current->next)
 				return (1);
-			}
-				
-			pinters_list = pinters_list->next;
+			my_pointer = my_pointer->next;
 		}
-		new_p = malloc(sizeof(listintp_t*));
-		if (pinters_list == NULL)
-		{
-			free_listintp(pinters_list);
-			return (-1);
-		}
-			
-		new_p->p = current;
-		new_p->next = pinters_list;
-		pinters_list = new_p;
-		list = list->next;
+		current = current->next;
 	}
-	free_listintp(pinters_list);
+	
 	return (0);
-}
-
-/**
- * free_listint - frees a listint_t list
- * @head: pointer to list to be freed
- * Return: void
- */
-void free_listintp(listintp_t *head)
-{
-	listintp_t *current;
-
-	while (head != NULL)
-	{
-		current = head;
-		head = head->next;
-		free(current);
-	}
 }
