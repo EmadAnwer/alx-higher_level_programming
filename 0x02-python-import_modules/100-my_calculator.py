@@ -13,7 +13,8 @@ if __name__ == "__main__":
     functions = [add, sub, mul, div]
     for i in range(4):
         if argv[2] == operators[i]:
-            print("{:d} {:s} {:d} = {:d}".format(a, argv[2], b, functions[i](a, b)))
+            print("{:d} {:s} {:d} = {:d}"
+                  .format(a, argv[2], b, functions[i](a, b)))
             exit(0)
 
     print("Unknown operator. Available operators: +, -, * and /")
