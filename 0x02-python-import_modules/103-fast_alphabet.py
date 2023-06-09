@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print(*map(chr, range(65, 91)), sep='')
+with open('/dev/stdout', 'w') as f:
+    f.write(''.join(map(chr, range(65, 91))) + '\n')
