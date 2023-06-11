@@ -15,7 +15,8 @@ int is_palindrome(listint_t **head)
 	current = *head;
 	if (!head || !*head || !current->next)
 		return (1);
-
+	if (!current->next->next)
+		return (current->n == current->next->n);
 	while (current != NULL)
 	{
 		len++;
