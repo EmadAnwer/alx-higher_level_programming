@@ -1,6 +1,7 @@
-#include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "lists.h"
+
 /**
  * is_palindrome - adds a new node at the end of a listint_t list
  * @head: pointer to pointer of first node of listint_t list
