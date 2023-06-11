@@ -9,37 +9,39 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *current;
-	int *array_int, i, len =0;
-	
-	current = *head;
-	if (!head || !*head || !current->next)
-		return (1);
-	if (!current->next->next)
-		return (current->n == current->next->n);
-	while (current != NULL)
-	{
-		len++;
-		current = current->next;
-	}
-	current = *head;
-	array_int = (int *)malloc(len * sizeof(int));
-	for (i = 0; i < len; i++)
-	{
-		array_int[i] = current->n;
-		current = current->next;
-	}
-	for (i = 0; i < len / 2; i++)
-	{
-		
-		
-		if (array_int[i] != array_int[len - 1 - i])
-		{
-			free(array_int);
-			return (0);
-		}
-			
-	}
-	free(array_int);
-	return (1);
+	listint_t *slow = *head;
+    listint_t *fast = *head;
+    listint_t *prev = NULL;
+    listint_t *next;
+
+    if (!head || !*head || !(*head)->next)
+        return 1;
+
+    // Find the middle of the linked list using the two-pointer technique
+    while (fast != NULL && fast->next != NULL)
+    {
+        fast = fast->next->next;
+        next = slow->next;
+        slow->next = prev;
+        prev = slow;
+        slow = next;
+    }
+
+    /* If the linked list has odd number of nodes, move the slow pointer one step ahead*/
+    if (fast != NULL)
+    {
+        slow = slow->next;
+    }
+
+    /* Compare the first half (stored in prev) with the second half (stored in slow)*/
+    while (prev != NULL && slow != NULL)
+    {
+        if (prev->n != slow->n)
+            return 0;
+
+        prev = prev->next;
+        slow = slow->next;
+    }
+
+    return 1;
 }
