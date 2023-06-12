@@ -5,7 +5,7 @@
 /**
  * is_palindrome - adds a new node at the end of a listint_t list
  * @head: pointer to pointer of first node of listint_t list
- * Return: address of the new element or NULL if it fails
+ * Return: 1 if is palindrome or 0 if its not
  */
 int is_palindrome(listint_t **head)
 {
