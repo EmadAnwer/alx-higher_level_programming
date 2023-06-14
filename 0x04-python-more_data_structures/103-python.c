@@ -1,5 +1,5 @@
 #include <Python.h>
-
+#include <stdio.h>
 void print_python_list(PyObject *p)
 {
     Py_ssize_t size, i;
