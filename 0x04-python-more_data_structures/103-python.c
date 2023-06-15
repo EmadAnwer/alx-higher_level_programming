@@ -6,18 +6,18 @@
  */
 void print_python_list(PyObject *p)
 {
-	Py_ssize_t size, i;
-	PyObject *item;
+    Py_ssize_t size, i;
+    PyObject *item;
 
-	printf("[*] Python list info\n");
-	printf("[*] Size of the Python List = %ld\n", PyList_Size(p));
-	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
+    printf("[*] Python list info\n");
+    printf("[*] Size of the Python List = %ld\n", PyList_Size(p));
+    printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
 
-	for (i = 0; i < PyList_Size(p); i++)
-	{
-		item = PyList_GetItem(p, i);
-		printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
-	}
+    for (i = 0; i < PyList_Size(p); i++)
+    {
+        item = PyList_GetItem(p, i);
+        printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
+    }
 }
 /**
  * print_python_bytes - adds a new node at the end of a listint_t list
@@ -25,7 +25,7 @@ void print_python_list(PyObject *p)
  */
 void print_python_bytes(PyObject *p)
 {
-	Py_ssize_t size, i;
+	Py_ssize_t i;
 	char *bytes_str;
 
 	printf("[.] bytes object info\n");
