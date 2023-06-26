@@ -6,7 +6,7 @@ def magic_calculation(a, b):
         try:
             if i > a:
                 raise Exception('Too far')
-        except:
+        except ValueError:
             result = a + b
             break
         else:
