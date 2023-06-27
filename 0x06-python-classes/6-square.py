@@ -38,7 +38,7 @@ class Square:
                         num >= 0 for num in value)):
                 raise TypeError("position must be a tuple of "
                                 "2 positive integers")
-            sefl.__position = value
+            self.__position = value
 
     def area(self):
         """area of a square"""
