@@ -15,7 +15,7 @@ class Square:
                               Should be a tuple of 2 positive integers.
 
         Raises:
-            TypeError: If size is not an integer or position is not a tuple of 2 positive integers.
+            TypeError: If size is not an integer or  is not a tuple o
             ValueError: If size is less than 0.
 
         """
@@ -75,7 +75,9 @@ class Square:
             TypeError: If value is not a tuple of 2 positive integers.
 
         """
-        if not isinstance(value, tuple) or len(value) != 2 or not all(isinstance(num, int) and num >= 0 for num in value):
+        if not isinstance(value, tuple) or len(value) != 2 or not all(
+                isinstance(num, int)
+                and num >= 0 for num in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -94,9 +96,9 @@ class Square:
         Print the square using the character '#'.
 
         If the size is 0, it prints an empty line.
-        The position is taken into account to determine the starting position of the square.
-        Lines before the square are filled with spaces based on the position[0] value.
-        The number of empty lines before the square is determined by the position[1] value.
+        The position is taken into account to determine the starting
+        Lines before the square are filled with spaces based on the
+        The number of empty lines before the square is determined
 
         """
         if self.size == 0:
