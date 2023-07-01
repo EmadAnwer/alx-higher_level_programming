@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""linked list module"""
+"""linked list"""
 
 
 class Node:
-    """Node class"""
+    """Node"""
 
     def __init__(self, data, next_node=None):
         """init
@@ -41,7 +41,7 @@ class Node:
 
 
 class SinglyLinkedList:
-
+    """SinglyLinkedList"""
     def __init__(self):
         """init
         Args:
