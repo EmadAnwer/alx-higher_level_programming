@@ -59,7 +59,7 @@ class Square:
     def __str__(self):
         """ string of a square of # in position"""
         if self.size == 0:
-            return "\n"
+            return ""
         else:
             return ((("\n" * self.position[1]) +
                     ((" " * self.position[0]) +
