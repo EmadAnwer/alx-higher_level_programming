@@ -11,8 +11,8 @@ class Square:
             size: size of the square
             position: position of the square x, y
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -54,4 +54,4 @@ class Square:
         """print a square of # in position"""
         print(("\n" * self.__position[1]) +
               ((" " * self.__position[0]) +
-               ("#" * self.size + "\n")) * self.size, end="")
+               ("#" * self.__size + "\n")) * self.__size, end="")
