@@ -11,8 +11,8 @@ class Node:
             data: int number
             next_node: next node pointer
         """
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -41,14 +41,6 @@ class Node:
 
 
 class SinglyLinkedList:
-
-    def __init__(self):
-        """init
-        Args:
-            __head: head pointer
-        """
-        self.__head = None
-
     def sorted_insert(self, value):
         """insert in sorted list
         Args:
