@@ -58,5 +58,7 @@ class Rectangle:
 
     def __str__(self):
         """return rectangle with the character #"""
+        if self.height == 0 or self.width == 0:
+            return ""
         s = (self.width * "#" + "\n") * (self.height - 1) + (self.width * "#")
         return s
