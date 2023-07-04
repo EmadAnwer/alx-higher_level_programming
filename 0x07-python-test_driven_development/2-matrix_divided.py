@@ -3,7 +3,7 @@
 
 
 def matrix_divided(matrix, div):
-    """Returns: new matrix (list of lists) 
+    """Returns: new matrix (list of lists)
         Arges:
             matrix: (list of lists)
             div: int
