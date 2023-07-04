@@ -5,32 +5,36 @@ Using ``print_square``
 -------------------
 
 This is an print_square test file
-First import ``4-print_square`` from the ``4-print_square.py`` module:
+First import ``print_square`` from the ``4-print_square.py`` module:
 
-    >>> print_square = __import__("4-print_square.py").print_square
+    >>> print_square = __import__("4-print_square").print_square
 
-first_name not string:
-    >>> print_square(1 , "Emad")
-    Traceback (most recent call last):
-    ...
-    TypeError: first_name must be a string
-
-last_name not string:
-    >>> print_square("Emad", 1)
-    Traceback (most recent call last):
-    ...
-    TypeError: last_name must be a string
-
-1 not string arg:
-    >>> print_square(2.5)
-    Traceback (most recent call last):
-    ...
-    TypeError: first_name must be a string
-
-1 string arg:
+size not int:
     >>> print_square("Emad")
-    My name is Emad 
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
 
-2 string args:
-    >>> print_square("Emad", "Anwer")
-    My name is Emad Anwer
+size flaot:
+    >>> print_square(1.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+size less than 0:
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+size qual 0:
+    >>> print_square(0)
+    ''
+
+size qual 1:
+    >>> print_square(1)
+    '#'
+
+size qual 4:
+    >>> print_square(4) # doctest:
+    '####\n####\n####\n####'
