@@ -86,3 +86,16 @@ m_b all ‘rows’ not same size:
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
     array([[ 7, 10],
            [15, 22]])
+
+-------------------------------------------------------------
+missing one argument:
+    >>> lazy_matrix_mul([[7, 10], [15, 22]])
+    Traceback (most recent call last):
+    ...
+    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+missing two arguments:
+    >>> lazy_matrix_mul()
+    Traceback (most recent call last):
+    ...
+    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
