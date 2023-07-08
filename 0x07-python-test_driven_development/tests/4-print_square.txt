@@ -33,8 +33,11 @@ size qual 0:
 
 size qual 1:
     >>> print_square(1)
-    '#'
+    #
 
 size qual 4:
     >>> print_square(4) # doctest:
-    '####\n####\n####\n####'
+    ####
+    ####
+    ####
+    ####

@@ -13,5 +13,5 @@ def print_square(size):
         raise ValueError("size must be >= 0")
     if size == 0:
         return ""
-
-    return (("#" * size + "\n") * size).rstrip()
+    rez = (("#" * size + "\n") * size).rstrip()
+    print(rez)
