@@ -23,6 +23,19 @@ m_b not list:
     TypeError: m_b must be a list
 
 -------------------------------------------------------------
+missing one argument:
+    >>> matrix_mul([[7, 10], [15, 22]])
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+missing two arguments:
+    >>> matrix_mul()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+-------------------------------------------------------------
 m_a not list of lists:
     >>> matrix_mul([7, 10, 15], [[7, 10], [15, 22]])
     Traceback (most recent call last):
