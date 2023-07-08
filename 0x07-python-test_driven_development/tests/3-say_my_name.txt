@@ -34,3 +34,7 @@ last_name not string:
 2 string args:
     >>> say_my_name("Emad", "Anwer")
     My name is Emad Anwer
+
+missing two argumentss:
+    >>> say_my_name()
+    My name is  
