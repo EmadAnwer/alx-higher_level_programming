@@ -37,4 +37,6 @@ last_name not string:
 
 missing two argumentss:
     >>> say_my_name()
-    My name is  
+    Traceback (most recent call last):
+    ...
+    ValueError: missing two arguments
