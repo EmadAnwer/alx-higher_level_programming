@@ -8,12 +8,13 @@ def add_integer(a, b=98):
         a: int or float
         b: int or float
     """
-    if not isinstance(a, (int, float)):
+    if a is None or not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)):
+    if b is None or not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
+    max_value = (2 ** 31) - 1
+    min_value = -max_value - 1
+    if a > max_value or b > max_value or a < min_value or b < min_value:
+        raise OverflowError("Float overflow: int too large to convert to float")
     # cast to int then add
-    result = a + b
-    if result == float('inf') or result == -float('inf'):
-        return 89
     return int(a) + int(b)

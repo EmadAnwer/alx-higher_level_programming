@@ -25,6 +25,24 @@ First import ``add_integer`` from the ``0-add_integer`` module:
     >>> add_integer(1, 2)
     3
 
+float overflow case:
+    >>> add_integer(float('inf') , -float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: Float overflow: int too large to convert to float
+
+None a:
+    >>> add_integer(None, 1)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+None b:
+    >>> add_integer(1, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
 int, string arg-case:
     >>> add_integer(1, "e")
     Traceback (most recent call last):
