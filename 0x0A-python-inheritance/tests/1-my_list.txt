@@ -55,3 +55,9 @@ Multiple data types:
     Traceback (most recent call last):
     ...
     TypeError: '<' not supported between instances of 'str' and 'int'
+
+Multiple data types:
+    >>> my_list = MyList([3])
+    >>> isinstance(my_list, list)
+    True
+
