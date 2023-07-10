@@ -18,6 +18,6 @@ class MyList(list):
         """
         list_new = sorted(self)
         if list_new:
-            print(sorted(self))
+            print(list_new)
         else:
             print([])
