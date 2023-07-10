@@ -1,0 +1,27 @@
+The ``1-my_list`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+This is an add_integer test file
+First import ``add_integer`` from the ``1-my_list`` module:
+
+    >>> print_sorted = __import__("1-my_list").MyList.print_sorted
+
+empty list:
+    >>> print_sorted([])
+    []
+
+-------------------
+
+add args:
+    >>> print_sorted([1, 2, 3 ,7, 0], "emad")
+    Traceback (most recent call last):
+    ...
+    TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+-------------------
+normal case:
+    >>> print_sorted([1, 2, 3 ,7, 0])
+    [0, 1, 2, 3, 7]
