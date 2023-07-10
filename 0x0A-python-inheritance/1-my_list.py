@@ -20,4 +20,4 @@ class MyList(list):
         if list_new:
             print(list_new)
         else:
-            print()
+            print([])
