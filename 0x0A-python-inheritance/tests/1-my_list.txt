@@ -38,3 +38,8 @@ Repeated elements:
     >>> my_list = MyList([3, 1, 2, 1, 2, 3])
     >>> my_list.print_sorted()
     [1, 1, 2, 2, 3, 3]
+
+Repeated elements:
+    >>> my_list = MyList([3])
+    >>> my_list.print_sorted()
+    [3]
