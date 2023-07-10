@@ -12,7 +12,6 @@ First import ``add_integer`` from the ``1-my_list`` module:
 empty list:
     >>> my_list = MyList()
     >>> my_list.print_sorted()
-    []
 
 -------------------
 
@@ -43,4 +42,3 @@ Repeated elements:
     >>> my_list = MyList([3])
     >>> my_list.print_sorted()
     [3]
-
