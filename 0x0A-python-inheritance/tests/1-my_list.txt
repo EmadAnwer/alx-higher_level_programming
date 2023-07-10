@@ -7,29 +7,34 @@ Using ``add_integer``
 This is an add_integer test file
 First import ``add_integer`` from the ``1-my_list`` module:
 
-    >>> print_sorted = __import__("1-my_list").MyList.print_sorted
+    >>> MyList = __import__("1-my_list").MyList
 
 empty list:
-    >>> print_sorted([])
+    >>> my_list = MyList([])
+    >>> my_list.print_sorted()
     []
 
 -------------------
 
 add args:
-    >>> print_sorted([1, 2, 3 ,7, 0], "emad")
+    >>> my_list = MyList([1, 2, 3 ,7, 0])
+    >>> my_list.print_sorted(55)
     Traceback (most recent call last):
     ...
     TypeError: print_sorted() takes 1 positional argument but 2 were given
 
 -------------------
 normal case:
-    >>> print_sorted([1, 2, 3 ,7, 0])
+    >>> my_list = MyList([1, 2, 3 ,7, 0])
+    >>> my_list.print_sorted()
     [0, 1, 2, 3, 7]
 
 Descending order:
-    >>> print_sorted([9, 5, 3, 2, 1])
+    >>> my_list = MyList([9, 5, 3, 2, 1])
+    >>> my_list.print_sorted()
     [1, 2, 3, 5, 9]
 
 Repeated elements:
-    >>> print_sorted([3, 1, 2, 1, 2, 3])
+    >>> my_list = MyList([3, 1, 2, 1, 2, 3])
+    >>> my_list.print_sorted()
     [1, 1, 2, 2, 3, 3]
