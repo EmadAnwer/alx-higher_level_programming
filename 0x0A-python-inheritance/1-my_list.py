@@ -16,5 +16,5 @@ class MyList(list):
         Returns:
             None
         """
-        if self is not None or self != []:
+        if self is not None:
             print(sorted(self))
