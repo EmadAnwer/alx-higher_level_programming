@@ -22,7 +22,7 @@ empty list 1:
 
 -------------------
 add args:
-    >>> my_list = MyList([1, 2, 3 ,7, 0])
+    >>> my_list = MyList([1, 2, 3, 7, 0])
     >>> my_list.print_sorted(55)
     Traceback (most recent call last):
     ...
@@ -30,7 +30,7 @@ add args:
 
 -------------------
 normal case:
-    >>> my_list = MyList([1, 2, 3 ,7, 0])
+    >>> my_list = MyList([1, 2, 3, 7, 0])
     >>> my_list.print_sorted()
     [0, 1, 2, 3, 7]
 
