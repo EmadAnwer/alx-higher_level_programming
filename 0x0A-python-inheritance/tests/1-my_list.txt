@@ -9,12 +9,16 @@ First import ``add_integer`` from the ``1-my_list`` module:
 
     >>> MyList = __import__("1-my_list").MyList
 
-empty list:
+empty list-0:
     >>> my_list = MyList()
     >>> my_list.print_sorted()
 
 -------------------
+empty list-1:
+    >>> my_list = MyList([])
+    >>> my_list.print_sorted()
 
+-------------------
 add args:
     >>> my_list = MyList([1, 2, 3 ,7, 0])
     >>> my_list.print_sorted(55)
