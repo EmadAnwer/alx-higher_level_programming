@@ -10,7 +10,7 @@ First import ``add_integer`` from the ``1-my_list`` module:
     >>> MyList = __import__("1-my_list").MyList
 
 empty list:
-    >>> my_list = MyList([])
+    >>> my_list = MyList()
     >>> my_list.print_sorted()
     []
 
@@ -44,7 +44,3 @@ Repeated elements:
     >>> my_list.print_sorted()
     [3]
 
-Repeated elements:
-    >>> my_list = MyList()
-    >>> my_list.print_sorted()
-    []
