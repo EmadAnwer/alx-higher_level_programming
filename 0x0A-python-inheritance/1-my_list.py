@@ -16,8 +16,5 @@ class MyList(list):
         Returns:
             None
         """
-        list_new = sorted(self)
-        if list_new:
-            print(list_new)
-        else:
-            print([])
+
+        print(sorted(list(self)))
