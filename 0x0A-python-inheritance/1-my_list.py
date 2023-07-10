@@ -16,5 +16,5 @@ class MyList(list):
         Returns:
             None
         """
-        if self:
-            print(sorted(self))
+
+        print(sorted(self))
