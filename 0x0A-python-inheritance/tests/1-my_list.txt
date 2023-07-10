@@ -25,3 +25,11 @@ add args:
 normal case:
     >>> print_sorted([1, 2, 3 ,7, 0])
     [0, 1, 2, 3, 7]
+
+Descending order:
+    >>> print_sorted([9, 5, 3, 2, 1])
+    [1, 2, 3, 5, 9]
+
+Repeated elements:
+    >>> print_sorted([3, 1, 2, 1, 2, 3])
+    [1, 1, 2, 2, 3, 3]
