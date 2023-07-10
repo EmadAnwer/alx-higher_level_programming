@@ -19,3 +19,5 @@ class MyList(list):
         list_new = sorted(self)
         if list_new:
             print(list_new)
+        else:
+            print()
