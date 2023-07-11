@@ -28,9 +28,13 @@ class Student:
             if value:
                 new_dict[key] = value
         return new_dict
-    
-    def reload_from_json(self, json):
 
+    def reload_from_json(self, json):
+        """reload_from_json
+        reload a class attributes from json
+        args:
+            json
+        """
         for key in json:
-            if hasattr(self ,key):
+            if hasattr(self, key):
                 setattr(self, key, json.get(key))
