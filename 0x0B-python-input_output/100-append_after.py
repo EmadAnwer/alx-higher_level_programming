@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """append after module"""
 
+
 def append_after(filename="", search_string="", new_string=""):
     """
     Inserts new_string after each line containing search_string in the file.
@@ -13,7 +14,7 @@ def append_after(filename="", search_string="", new_string=""):
     Returns:
         None
     """
-    with open(filename, 'r+') as file:
+    with open(filename, 'r+', encoding="utf-8") as file:
         lines = file.readlines()
         file.seek(0)
 
