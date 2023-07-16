@@ -125,6 +125,35 @@ class TestRectangleClassMethods(unittest.TestCase):
         with self.assertRaises(TypeError):
             rectangle.display(2)
 
+    def test_display_useing_x_y(self):
+        """test display method using x y"""
+
+        # Case 1 use only x
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            rectangle = Rectangle(2, 3, 3, 0)
+            rectangle.display()
+            expected_output = "   ##\n   ##\n   ##\n"
+            self.assertEqual(expected_output, fake_out.getvalue())
+        # Case 2 use only y
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            rectangle = Rectangle(3, 2, 0, 3)
+            rectangle.display()
+            expected_output = "\n\n\n###\n###\n"
+            self.assertEqual(expected_output, fake_out.getvalue())
+
+        # Case 2 useing x, y
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            rectangle = Rectangle(3, 2, 2, 3)
+            rectangle.display()
+            expected_output = "\n\n\n  ###\n  ###\n"
+            self.assertEqual(expected_output, fake_out.getvalue())
+
+    def test_display_return_none(self):
+        """test display return"""
+        with patch('sys.stdout', new=StringIO()):
+            rectangle = Rectangle(3, 2, 2, 3)
+            self.assertIsNone(rectangle.display())
+
     def test_str(self):
         """test __str__ magic method"""
 
