@@ -45,5 +45,3 @@ class Base:
         if json_string is None or json_string == "":
             return []
         return loads(json_string)
-    
-
