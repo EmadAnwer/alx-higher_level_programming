@@ -3,6 +3,8 @@
 """
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+from ast import literal_eval
 
 
 class TestBaseClass(unittest.TestCase):
@@ -21,5 +23,14 @@ class TestBaseClass(unittest.TestCase):
         base_3 = Base()
         self.assertEqual(base_3.id, 2)
 
-    
-        
+    def test_to_json_string(self):
+        """test to json string"""
+        rectangle = Rectangle(10, 7, 2, 8)
+
+        dictionary = rectangle.to_dictionary()
+
+        # get json string
+        json_dictionary_string = Base.to_json_string([dictionary])
+        # convet it to Dict
+        json_dictionary = literal_eval(json_dictionary_string[1: -1])
+        self.assertDictEqual(dictionary, json_dictionary)

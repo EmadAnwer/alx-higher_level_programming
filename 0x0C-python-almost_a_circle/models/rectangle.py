@@ -104,6 +104,16 @@ class Rectangle(Base):
                 else:
                     raise ValueError(f"{key} is not attribute in this class")
 
+    def to_dictionary(self):
+        """retangle to dictionary"""
+        retangle_dict = {}
+        retangle_dict["id"] = self.id
+        retangle_dict["width"] = self.width
+        retangle_dict["height"] = self.height
+        retangle_dict["x"] = self.x
+        retangle_dict["y"] = self.y
+        return retangle_dict
+
     def __str__(self):
         """string method"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} " \
