@@ -67,7 +67,8 @@ class Base:
     def load_from_file(cls):
         """lode json from file"""
         try:
-            with open(cls.__name__+".json", encoding="utf-8", mode="r") as file:
+            with open(cls.__name__+".json", encoding="utf-8",
+                      mode="r") as file:
                 content = cls.from_json_string(file.read())
         except FileNotFoundError:
             return []
