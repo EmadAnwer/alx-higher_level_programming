@@ -47,3 +47,17 @@ class Base:
         if json_string is None or json_string == "":
             return []
         return loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """craete an instance"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+        instance = None
+        if cls.__name__ == "Rectangle":
+            instance = Rectangle(1, 1)
+        else:
+            instance = Square(1)
+
+        instance.update(**dictionary)
+        return instance
