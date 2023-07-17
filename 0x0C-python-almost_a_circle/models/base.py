@@ -32,11 +32,11 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """save_to_file"""
-
+        
         with open(cls.__name__+".json", encoding="utf-8", mode="w") as file:
             mylist = []
             for obj in list_objs:
-                mylist.append(obj.to_dictionary())
+                mylist.append(loads(cls.to_json_string(obj.to_dictionary())))
             dump(mylist, file)
 
     @staticmethod
