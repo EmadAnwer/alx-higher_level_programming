@@ -4,7 +4,7 @@
 from json import dump
 from json import dumps
 from json import loads
-
+from json import load
 
 class Base:
     """Base Class"""
@@ -61,3 +61,13 @@ class Base:
 
         instance.update(**dictionary)
         return instance
+    
+    @classmethod
+    def load_from_file(cls):
+        """lode json from file"""
+        try:
+            with open(cls.__name__+".json", encoding="utf-8", mode="r") as file:
+                content = cls.from_json_string(file.read())
+        except FileNotFoundError:
+            return []
+        return list(map(lambda obj: cls.create(**obj), content))
