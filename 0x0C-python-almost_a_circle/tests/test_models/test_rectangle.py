@@ -98,6 +98,7 @@ class TestRectangleClassMethods(unittest.TestCase):
     """
         test Rectangle class methods
     """
+    # test disply method
 
     def test_display(self):
         """test display method"""
@@ -165,3 +166,59 @@ class TestRectangleClassMethods(unittest.TestCase):
         rectangle.x = 5
         rectangle.y = 7
         self.assertEqual(str(rectangle), "[Rectangle] (12) 5/7 - 5/15")
+
+    # test update method
+    def test_update_without_args(self):
+        """test update method without arguments"""
+        rectangle = Rectangle(5, 10, 0, 10, 5)
+        old_hight = rectangle.height
+        old_width = rectangle.width
+        old_x = rectangle.x
+        old_y = rectangle.y
+        old_id = rectangle.id
+        # case 1 dont change anything
+        rectangle.update()
+        self.assertEqual(old_id, rectangle.id)
+        self.assertEqual(old_hight, rectangle.height)
+        self.assertEqual(old_width, rectangle.width)
+        self.assertEqual(old_x, rectangle.x)
+        self.assertEqual(old_y, rectangle.y)
+
+    def test_update_with_args(self):
+        """test update method arguments"""
+        rectangle = Rectangle(5, 10, 0, 10, 5)
+        rectangle.update(1, 2, 3, 4, 5)
+        self.assertEqual(1, rectangle.id)
+        self.assertEqual(2, rectangle.width)
+        self.assertEqual(3, rectangle.height)
+        self.assertEqual(4, rectangle.x)
+        self.assertEqual(5, rectangle.y)
+
+    def test_update_with_args_kwargs(self):
+        """test update method args kwargs in this case we have to use args"""
+        rectangle = Rectangle(5, 10, 0, 10, 5)
+
+        # case 1 using real attr
+        rectangle.update(1, id=2)
+        self.assertEqual(1, rectangle.id)
+
+        # case 2 using fake attr
+        rectangle.update(1, emad=2)
+        self.assertEqual(1, rectangle.id)
+
+    def test_update_with_kwargs(self):
+        """test update using kwargs"""
+        rectangle = Rectangle(10, 10, 10, 10, 5)
+
+        # error
+        with self.assertRaises(ValueError):
+            rectangle.update(emad=1)
+        old_hight = rectangle.height
+        old_x = rectangle.x
+        old_y = rectangle.y
+        rectangle.update(width=1, id=87)
+        self.assertEqual(rectangle.id, 87)
+        self.assertEqual(old_hight, rectangle.height)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(old_x, rectangle.x)
+        self.assertEqual(old_y, rectangle.y)
