@@ -43,3 +43,12 @@ class Square(Rectangle):
                     setattr(self, key, value)
                 else:
                     raise ValueError(f"{key} is not attribute in this class")
+
+    def to_dictionary(self):
+        """square to dictionary"""
+        retangle_dict = {}
+        retangle_dict["id"] = self.id
+        retangle_dict["size"] = self.size
+        retangle_dict["x"] = self.x
+        retangle_dict["y"] = self.y
+        return retangle_dict
