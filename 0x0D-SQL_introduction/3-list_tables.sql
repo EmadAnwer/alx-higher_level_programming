@@ -1,2 +1,2 @@
 -- list all tables of DATABASE
-show tables;
+SHOW TABLES;
