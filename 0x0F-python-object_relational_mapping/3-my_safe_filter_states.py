@@ -14,7 +14,8 @@ if __name__ == "__main__":
         db=mysql_db_name
     )
     cursor = db.cursor()
-    all_states = cursor.execute("SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC", (argv[4],))
+    query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC"
+    all_states = cursor.execute(query, (argv[4],))
     for row in cursor.fetchall():
         print(row)
 
