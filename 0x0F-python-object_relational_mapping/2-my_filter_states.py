@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """Task 2 takes in an argument and displays all values in the states table
 of hbtn_0e_0_usa where name matches the argument."""
-
-
 import MySQLdb
 from sys import argv
 
@@ -17,9 +15,9 @@ if __name__ == "__main__":
         db=mysql_db_name
     )
     cursor = db.cursor()
-    query = f"""
+    query = """
     SELECT * FROM states
-    WHERE name = '{argv[4]}'"""
+    WHERE name = '{}'""".format(argv[4])
     all_states = cursor.execute(query)
     for row in cursor.fetchall():
         print(row)
