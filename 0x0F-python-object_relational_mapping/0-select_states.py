@@ -12,6 +12,9 @@ db = MySQLdb.connect(
     passwd=mysql_password,
     db=mysql_db_name
 )
+# Close the cursor and database connection
+cursor.close()
+db.close()
 cursor = db.cursor()
 all_states = cursor.execute("SELECT * FROM states ORDER BY id")
 
