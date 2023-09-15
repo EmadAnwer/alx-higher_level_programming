@@ -14,12 +14,11 @@ if __name__ == "__main__":
         passwd=mysql_password,
         db=mysql_db_name
     )
-    # Close the cursor and database connection
-
     cursor = db.cursor()
     all_states = cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
     for i in cursor.fetchall():
         print(i)
+    # Close the cursor and database connection
     cursor.close()
     db.close()
