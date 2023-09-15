@@ -17,7 +17,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
     query = """
     SELECT * FROM states
-    WHERE name = '{}'""".format(argv[4])
+    WHERE name = '{}'
+    ORDER BY id ASC""".format(argv[4])
     all_states = cursor.execute(query)
     for row in cursor.fetchall():
         print(row)
