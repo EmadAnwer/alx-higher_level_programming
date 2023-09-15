@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Task 1 lists all states with a name starting with N from the database hbtn_0e_0_usa"""
+"""Task 1 lists all states with a name
+starting with N from the database hbtn_0e_0_usa"""
 import MySQLdb
 from sys import argv
 
@@ -20,9 +21,9 @@ if __name__ == "__main__":
     ORDER BY id ASC
     """
     all_states = cursor.execute(query)
+    for row in cursor.fetchall():
+        print(row)
 
-    for i in cursor.fetchall():
-        print(i)
     # Close the cursor and database connection
     cursor.close()
     db.close()
