@@ -6,16 +6,15 @@ from sys import argv
 
 if __name__ == "__main__":
     mysql_username, mysql_password, mysql_db_name = argv[1], argv[2], argv[3]
-    try:
-        db = MySQLdb.connect(
-            host='localhost',
-            port=3306,
-            user=mysql_username,
-            passwd=mysql_password,
-            db=mysql_db_name
-        )
-    except Exception as e :
-        exit()
+
+    db = MySQLdb.connect(
+        host='localhost',
+        port=3306,
+        user=mysql_username,
+        passwd=mysql_password,
+        db=mysql_db_name
+    )
+
     cursor = db.cursor()
     query = """
     SELECT * FROM states
