@@ -15,7 +15,7 @@ if __name__ == "__main__":
             db=mysql_db_name
         )
     except Exception as e :
-        pass
+        exit()
     cursor = db.cursor()
     query = """
     SELECT * FROM states
