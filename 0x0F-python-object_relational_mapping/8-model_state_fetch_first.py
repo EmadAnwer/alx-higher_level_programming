@@ -12,4 +12,4 @@ if __name__ == "__main__":
     session = Session()
     state = session.query(State).first()
 
-    print("" if state is None else f"{state.id}: {state.name}")
+    print("Nothing" if state is None else f"{state.id}: {state.name}")
