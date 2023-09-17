@@ -10,6 +10,6 @@ if __name__ == "__main__":
         argv[1], argv[2], argv[3]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-
     state = session.query(State).first()
-    print(f"{state.id}: {state.name}")
+
+    print("" if state is None else f"{state.id}: {state.name}")
