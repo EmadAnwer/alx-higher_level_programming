@@ -6,4 +6,4 @@ if __name__ == "__main__":
     import sys
     data = {"email": sys.argv[2]}
     req = requests.post(sys.argv[1], data=data)
-    print(response.text)
+    print(req.text)
