@@ -9,7 +9,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         value = sys.argv[1]
     data = {"q": value}
-    response = requests.post(sys.argv[1], data=data)
+    response = requests.post("http://0.0.0.0:5000/search_user", data=data)
     try:
         json_response = response.json()
         if json_response:
