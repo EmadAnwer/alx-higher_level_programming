@@ -8,7 +8,7 @@ if __name__ == "__main__":
                'Accept': 'application/vnd.github.v3+json'}
     payload = {'per_page': 10, 'page': 1}
     req = requests.get(
-        f'https://api.github.com/repos/{sys.argv[1]}/{sys.argv[2]}/commits',
+        f'https://api.github.com/repos/{sys.argv[2]}/{sys.argv[1]}/commits',
         headers=headers,
         params=payload)
     for commit in req.json():
