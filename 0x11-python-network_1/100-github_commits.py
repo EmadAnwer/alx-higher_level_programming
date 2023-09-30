@@ -4,11 +4,13 @@
 if __name__ == "__main__":
     import requests
     import sys
+    headers = {'X-GitHub-Api-Version': '2022-11-28',
+               'Accept': 'application/vnd.github.v3+json'}
+    payload = {'per_page': 10, 'page': 1}
     req = requests.get(
-        f'https://api.github.com/repos/{sys.argv[1]}/{sys.argv[2]}/commits')
-    for commit in range(10):
-        try:
-            print(req.json()[commit].get('sha'), end=': ')
-            print(req.json()[commit].get('commit').get('author').get('name'))
-        except:
-            pass
+        f'https://api.github.com/repos/{sys.argv[1]}/{sys.argv[2]}/commits',
+        headers=headers,
+        params=payload)
+    for commit in req.json():
+        print(commit.get('sha'), end=': ')
+        print(commit.get('commit').get('author').get('name'))
