@@ -11,13 +11,12 @@ request.get(url, (error, response, body) => {
       for (let index = 0; index < films.count; index++) {
         for (const character_url of films.results[index].characters) {
           const parts = character_url.split('/');
-          console.log(parts);
           if (parts[parts.length - 2] === '18') count++;
         }
       }
       console.log(count);
     } catch (error) {
-      console.log(error);
+      process.exit();
     }
   }
 });
