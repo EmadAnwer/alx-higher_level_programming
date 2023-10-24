@@ -16,10 +16,10 @@ const makeRequest = (url) =>
     });
   });
 request.get(filmsURL, (error, response, body) => {
-  if (!error && response.statusCode === 200) {
+  if (!error) {
     const charactersInMovie = JSON.parse(body).characters;
     for (const char of charactersInMovie) {
       makeRequest(char);
     }
-  }
+  } else console.log(error);
 });
