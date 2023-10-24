@@ -9,17 +9,16 @@ request.get(url, (error, response, body) => {
   if (!error && response.statusCode === 200) {
     const data = JSON.parse(body);
     const movies = data.results;
-    let count = 0;
 
     for (const movie of movies) {
       if (
         movie.characters.includes(
-          `https://swapi-api.alx-tools.com/api/people/${characterID}/`
+          `https://swapi-api.alx-tools.com/api/people/${characterId}/`
         )
       ) {
         count++;
       }
     }
-    console.log(count);
   }
+  console.log(count);
 });
