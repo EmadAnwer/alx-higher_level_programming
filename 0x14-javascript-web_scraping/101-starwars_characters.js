@@ -6,7 +6,7 @@ if (!movieId) process.exit();
 
 const filmsURL = 'https://swapi-api.alx-tools.com/api/films/' + movieId;
 
-function makeRequest(url, charactersInMovie, index) {
+function makeRequest (url, charactersInMovie, index) {
   request(url, (error, response, body) => {
     if (error) {
       console.log(error);
