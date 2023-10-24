@@ -9,8 +9,8 @@ request.get(url, (error, response, body) => {
     try {
       const films = JSON.parse(body);
       for (let index = 0; index < films.count; index++) {
-        for (const character_url of films.results[index].characters) {
-          if (character_url.endsWith('/18/')) count++;
+        for (const characterUrl of films.results[index].characters) {
+          if (characterUrl.endsWith('/18/')) count++;
         }
       }
       console.log(count);
