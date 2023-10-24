@@ -4,7 +4,7 @@ const request = require('request');
 const url = process.argv[2];
 if (!url) process.exit();
 request.get(url, (error, response, body) => {
-  const characterID = '18';
+  const characterID = '/18';
   let count = 0;
   if (!error && response.statusCode === 200) {
     const films = JSON.parse(body);
