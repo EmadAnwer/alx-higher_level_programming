@@ -7,7 +7,7 @@ if (!movieId) process.exit();
 const filmsURL = 'https://swapi-api.alx-tools.com/api/films/' + movieId;
 const responses = [];
 
-function makeRequest (url, len, index) {
+function makeRequest(url, len, index) {
   request(url, (error, response, body) => {
     if (error) {
       console.log(error);
@@ -23,10 +23,10 @@ function makeRequest (url, len, index) {
 }
 
 request.get(filmsURL, (error, response, body) => {
-  if (!error && response.statusCode === 200) {
+  if (!error) {
     const charactersInMovie = JSON.parse(body).characters;
     charactersInMovie.forEach((char, index) => {
       makeRequest(char, charactersInMovie.length, index);
     });
-  }
+  } else console.log(error);
 });
